@@ -1,143 +1,195 @@
-# 🌟 K-Drama Recommendation System 📺💻
+# 🌟 K-Drama Recommendation System 🎬
 
-Welcome to the **K-Drama Recommendation System** project! This web application helps users discover new K-drama shows based on their preferences. Built using Python, Flask, and a bit of data magic with pandas and scikit-learn, the system provides personalized recommendations for K-drama fans worldwide! 🎉
+A Machine Learning-based K-Drama Recommendation Web Application built using **Python, Flask, Pandas, and Scikit-learn** that helps users discover K-dramas similar to their favorite shows.
 
----
+This project uses **content-based filtering**, **TF-IDF vectorization**, and **cosine similarity** to generate personalized drama recommendations based on genres, tags, and plot descriptions.
 
-## 📝 Project Overview
-
-This project leverages **content-based filtering** to recommend K-dramas based on user input, such as genre preferences. It uses **TF-IDF vectorization** and **cosine similarity** to analyze a dataset of K-dramas and return suggestions that closely match the user’s input.
-
-💾 **Dataset**: The project is powered by a K-drama dataset, which you can check out [here](https://example.com/kdrama_dataset.csv).
-
-### **Key Features**:
-- 🔍 **Search by K-Drama Title**: Enter the title of a show you like, and the system will recommend similar shows.
-- 📊 **Recommendations Based on Genres, Tags, and Synopses**: The system analyzes drama content and tags to make recommendations.
-- 📱 **Responsive User Interface**: The interface adapts to mobile and desktop screens for ease of use.
-- 🌟 **Displays Show Details**: Recommendations come with detailed information like genre, score, and episode count.
+Designed for K-drama enthusiasts who want to discover new series intelligently through recommendation algorithms and interactive web experience.
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Project Overview
 
-### **Prerequisites**
+The K-Drama Recommendation System analyzes drama metadata and textual information to recommend similar K-dramas based on user preferences.
 
-Before running this project, ensure you have the following installed:
-- **Python 3.x** 
-- **Flask** 
-- **Pandas**
-- **Scikit-learn**
+Users can:
 
-You can install the necessary dependencies using the following command:
+* Search for a K-drama title
+* Receive personalized recommendations
+* Explore genres, ratings, episode counts, and drama details
+* Discover dramas with similar themes and storylines
 
-```bash
+The recommendation engine leverages Natural Language Processing (NLP) techniques to understand content similarity between dramas.
+
+---
+
+# ✨ Features
+
+✔ Search K-Dramas by Title
+✔ Personalized Drama Recommendations
+✔ Content-Based Filtering System
+✔ TF-IDF Vectorization
+✔ Cosine Similarity Recommendation Engine
+✔ Responsive User Interface
+✔ Genre & Synopsis-Based Matching
+✔ Display of Drama Details & Ratings
+✔ Flask-Based Web Application
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology          | Purpose                     |
+| ------------------- | --------------------------- |
+| Python              | Core Programming Language   |
+| Flask               | Backend Web Framework       |
+| Pandas              | Data Processing & Analysis  |
+| Scikit-learn        | Machine Learning Algorithms |
+| TF-IDF Vectorizer   | Text Feature Extraction     |
+| Cosine Similarity   | Recommendation Engine       |
+| HTML/CSS/JavaScript | Frontend Development        |
+
+---
+
+# 📂 Project Structure
+
+```bash id="sqh29q"
+kdrama_recommendation/
+│
+├── app.py
+├── kdrama.ipynb
+├── kdrama_list.csv
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone the Repository
+
+```bash id="4w5m0u"
+git clone https://github.com/TushtiSavarn/kdrama_recommendation.git
+cd kdrama_recommendation
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash id="xjj4ha"
 pip install flask pandas scikit-learn
 ```
 
-### **Clone the Repository**
+---
 
-Clone this repository to your local machine:
+## 3️⃣ Run the Application
 
-```bash
-git clone https://github.com/your-username/kdrama-recommendation-system.git
-cd kdrama-recommendation-system
-```
-
-### **Dataset**
-
-Make sure the **`kdrama_list.csv`** file is placed in the project directory. The dataset contains K-drama details like:
-- Title
-- Genre
-- Main Cast
-- Synopsis
-- Tags
-- Score
-- Content Rating
-- Episode Count
-- Image URL
-
-💾 **Dataset**: You can download the dataset from [here](https://example.com/kdrama_dataset.csv).
-
-### **Run the App**
-
-Once everything is set up, you can run the Flask server using the following command:
-
-```bash
+```bash id="5qbjlwm"
 python app.py
 ```
 
-Navigate to `http://127.0.0.1:5000/` in your browser to use the app.
+Open your browser and visit:
 
----
-
-## 🛠 Project Structure
-
-Here's a quick overview of the project structure:
-
-```bash
-kdrama-recommendation-system/
-│
-├── templates/
-│   └── index.html        # Frontend HTML file
-│
-├── static/
-│   ├── styles.css        # Styling for the app
-│   └── script.js         # JavaScript to handle user interaction
-│
-├── app.py                # The main Flask app
-├── kdrama_list.csv       # Dataset of K-dramas
-└── README.md             # Project documentation
+```bash id="i4vmpk"
+http://127.0.0.1:5000/
 ```
 
-### **How It Works**
+---
 
-1. **User Input**: Users enter a K-drama title or choose from suggestions.
-2. **Content-Based Filtering**: Using **TF-IDF vectorization** and **cosine similarity**, the app compares shows based on the combination of genres, tags, and synopses.
-3. **Recommendations**: A list of similar K-dramas is presented with details like the title, genre, score, and episode count. 🎬
+# 🧠 How the Recommendation System Works
+
+## 🔹 Step 1: Data Processing
+
+The dataset containing K-drama details such as genres, tags, synopses, ratings, and episode information is processed using Pandas.
 
 ---
 
-## 📈 Future Improvements
+## 🔹 Step 2: TF-IDF Vectorization
 
-- **User Accounts**: Add user authentication so users can save their favorite K-dramas and recommendations.
-- **Advanced Filters**: Allow filtering by actors, moods, or specific themes like "high school drama" or "historical fiction."
-- **Integration with Streaming Platforms**: Provide direct links to streaming services like Netflix or Viki for recommended shows.
-- **Improved Image Handling**: Fix any broken image links or missing images for K-dramas that don’t provide an `img_url`.
+Textual information from drama descriptions and tags is converted into numerical vectors using TF-IDF Vectorization.
 
 ---
 
-## 💻 Tech Stack
+## 🔹 Step 3: Similarity Calculation
 
-- **Backend**: Flask (Python)
-- **Data Handling**: Pandas
-- **Machine Learning**: Scikit-learn (TF-IDF Vectorizer, Cosine Similarity)
-- **Frontend**: HTML, CSS, JavaScript
-- **Data**: CSV dataset of K-dramas
-
-💾 **Dataset**: You can find the dataset [here](https://example.com/kdrama_dataset.csv).
+Cosine Similarity is used to calculate similarity scores between dramas.
 
 ---
 
-## 🏗 Contributing
+## 🔹 Step 4: Recommendation Generation
 
-Contributions are welcome! If you'd like to contribute to this project, feel free to submit a pull request or open an issue with any ideas or improvements.
-
----
-
-## 📧 Contact
-
-If you have any questions or feedback, feel free to reach out at **tushtisavran@gmail.com**.
+The system returns dramas with the highest similarity scores based on the selected title.
 
 ---
 
-### **License**
+# 📊 Machine Learning Concepts Used
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+* Content-Based Filtering
+* Natural Language Processing (NLP)
+* TF-IDF Vectorization
+* Cosine Similarity
+* Recommendation Systems
+
+# 📚 Learning Outcomes
+
+This project helped strengthen understanding of:
+
+* Recommendation Systems
+* NLP Fundamentals
+* Machine Learning Workflows
+* Data Preprocessing
+* Flask Web Development
+* Frontend & Backend Integration
+* User Experience Design
 
 ---
 
-🌟 **Thank you for checking out the K-Drama Recommendation System!** 🌟  
-Feel free to fork, star, or contribute to the project. I hope you enjoy discovering your next favorite K-drama! ✨
+# 🚀 Future Improvements
+
+✔ Hybrid Recommendation System
+✔ User Authentication & Favorites
+✔ Mood-Based Recommendations
+✔ Streaming Platform Integration
+✔ Advanced NLP-Based Recommendations
+✔ Deep Learning Recommendation Models
+✔ Real-Time API Integration
+✔ Dark Mode UI
 
 ---
 
+# 🎯 Why This Project Matters
+
+Recommendation systems are widely used in:
+
+* Netflix
+* Spotify
+* YouTube
+* E-commerce platforms
+
+This project demonstrates practical implementation of machine learning concepts in entertainment-based recommendation systems while combining:
+
+* AI/ML,
+* web development,
+* NLP,
+* and user-centric design.
+
+---
+
+# 👩‍💻 Author
+
+**Tushti Savarn**
+MCA Student | AI/ML & Full-Stack Enthusiast
+
+🔗 GitHub: https://github.com/TushtiSavarn
+🔗 LinkedIn: https://www.linkedin.com/in/tushti-savarn/
+🔗 Medium: https://medium.com/@tushtisavran
+
+---
+
+# ⭐ Support
+
+If you enjoyed this project, consider giving it a ⭐ on GitHub!
