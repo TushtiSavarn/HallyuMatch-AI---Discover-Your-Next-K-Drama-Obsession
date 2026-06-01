@@ -43,7 +43,7 @@ Users can search for a drama title and instantly receive recommendations with re
 
 ### Homepage
 
-![Homepage](assets/homepage.png)
+![Homepage](assets/homepage.png.png)
 
 ### Recommendation Results
 
