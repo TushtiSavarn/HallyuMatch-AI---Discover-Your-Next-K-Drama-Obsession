@@ -35,16 +35,45 @@ cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
 
 # Step 5: Recommendation System Function
 def get_recommendations(title, num_recommendations=5):
-    try:
-        idx = data.index[data['Name'] == title].tolist()[0]
-    except IndexError:
-        return [], "K-drama not found in the dataset. Here are some popular suggestions:", data.sample(5).to_dict(orient='records')
+
+    title = title.strip().lower()
+
+    matches = data[
+        data['Name'].str.lower().str.contains(title)
+    ]
+
+    if matches.empty:
+        return [], "K-drama not found in database."
+
+    idx = matches.index[0]
 
     sim_scores = list(enumerate(cosine_sim[idx]))
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[1:num_recommendations + 1]  # Exclude the input title
-    kdrama_indices = [i[0] for i in sim_scores]
-    recommendations = data.iloc[kdrama_indices].to_dict(orient='records')
+
+    sim_scores = sorted(
+        sim_scores,
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    sim_scores = sim_scores[1:num_recommendations + 1]
+
+    recommendations = []
+
+    for drama_idx, similarity_score in sim_scores:
+
+        drama = data.iloc[drama_idx]
+
+        recommendations.append({
+            "Name": drama["Name"],
+            "Genre": drama["Genre"],
+            "Score": drama["Score"],
+            "Episode": drama["Episode"],
+            "Network": drama["Network"],
+            "Sinopsis": drama["Sinopsis"],
+            "Poster": drama["img url"],
+            "Similarity": round(similarity_score * 100, 1)
+        })
+
     return recommendations, ""
 
 # Route for homepage

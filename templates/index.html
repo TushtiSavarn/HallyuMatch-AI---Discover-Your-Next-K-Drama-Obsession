@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HallyuMatch AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Deco tape strips to pin down the container like a real scrapbook page -->
+        <div class="deco-tape tape-top-left"></div>
+        <div class="deco-tape tape-top-right"></div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <!-- Sparkle decorative badges -->
+            <span class="sparkle-badge badge-left">✦</span>
+            <span class="sparkle-badge badge-right">✦</span>
+
+            <h1>HallyuMatch AI</h1>
+
+            <p class="tagline">
+                AI-powered K-Drama recommendations using NLP and Content-Based Filtering
+            </p>
+        </div>
+
+        <!-- Search Form -->
+        <form id="kdramaForm">
+
+            <label for="kdramaTitle">
+                Find dramas you'll fall in love with based on your favorites
+            </label>
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="kdramaTitle"
+                    name="kdramaTitle"
+                    placeholder="Try: The Glory, Move to Heaven, Weak Hero Class 1..."
+                    autocomplete="off">
+
+                <button type="submit">
+                    Discover Recommendations
+                </button>
+
+            </div>
+
+            <ul id="suggestions"></ul>
+
+        </form>
+
+        <!-- Recommendation Results -->
+        <div id="recommendations"></div>
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                Built with Flask, Scikit-Learn, TF-IDF Vectorization & Cosine Similarity
+            </p>
+
+            <p>
+                Developed by <strong>Tushti Savarn</strong>
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- Modal Box -->
+    <div id="dramaModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

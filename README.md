@@ -1,196 +1,233 @@
 # HallyuMatch AI
-Discover Your Next K-Drama Obsession 🎬
 
-A Machine Learning-based K-Drama Recommendation Web Application built using **Python, Flask, Pandas, and Scikit-learn** that helps users discover K-dramas similar to their favorite shows.
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-purple?logo=pandas)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-This project uses **content-based filtering**, **TF-IDF vectorization**, and **cosine similarity** to generate personalized drama recommendations based on genres, tags, and plot descriptions.
-
-Designed for K-drama enthusiasts who want to discover new series intelligently through recommendation algorithms and interactive web experience.As a K-drama enthusiast, I wanted to explore how recommendation systems used by Netflix and streaming platforms work. This project combines NLP, content-based filtering, and web development to help users discover dramas aligned with their interests.
-
----
-
-# 🚀 Project Overview
-
-The K-Drama Recommendation System analyzes drama metadata and textual information to recommend similar K-dramas based on user preferences.
-
-Users can:
-
-* Search for a K-drama title
-* Receive personalized recommendations
-* Explore genres, ratings, episode counts, and drama details
-* Discover dramas with similar themes and storylines
-
-The recommendation engine leverages Natural Language Processing (NLP) techniques to understand content similarity between dramas.
+A machine learning-powered K-Drama recommendation web application built with Flask and Scikit-learn. HallyuMatch AI helps users discover similar K-Dramas using Natural Language Processing (NLP) and content-based filtering techniques.
 
 ---
 
-# ✨ Features
+## Overview
 
-✔ Search K-Dramas by Title
-✔ Personalized Drama Recommendations
-✔ Content-Based Filtering System
-✔ TF-IDF Vectorization
-✔ Cosine Similarity Recommendation Engine
-✔ Responsive User Interface
-✔ Genre & Synopsis-Based Matching
-✔ Display of Drama Details & Ratings
-✔ Flask-Based Web Application
+HallyuMatch AI analyzes drama metadata including genres, tags, and plot descriptions to recommend similar dramas based on textual similarity.
 
----
+The recommendation engine uses:
 
-# 🛠️ Tech Stack
+- TF-IDF Vectorization
+- Cosine Similarity
+- Content-Based Filtering
+- NLP-driven feature extraction
 
-| Technology          | Purpose                     |
-| ------------------- | --------------------------- |
-| Python              | Core Programming Language   |
-| Flask               | Backend Web Framework       |
-| Pandas              | Data Processing & Analysis  |
-| Scikit-learn        | Machine Learning Algorithms |
-| TF-IDF Vectorizer   | Text Feature Extraction     |
-| Cosine Similarity   | Recommendation Engine       |
-| HTML/CSS/JavaScript | Frontend Development        |
+Users can search for a drama title and instantly receive recommendations with relevant details including ratings, episodes, genres, networks, and synopsis information.
 
 ---
 
-# 📂 Project Structure
+## Features
 
-```bash id="sqh29q"
+- K-Drama title search with autocomplete
+- Content-based recommendation engine
+- TF-IDF text vectorization
+- Cosine similarity matching
+- Responsive modern UI
+- Drama posters and metadata
+- Detailed modal view for recommendations
+- Case-insensitive search handling
+- Flask REST API backend
+
+---
+
+## Application Preview
+
+### Homepage
+
+![Homepage](assets/homepage.png)
+
+### Recommendation Results
+
+![Recommendations](assets/recommendations.png)
+
+### Drama Details Modal
+
+![Modal View](assets/model-view.png)
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Python | Core Programming Language |
+| Flask | Backend Web Framework |
+| Pandas | Data Processing |
+| Scikit-Learn | Machine Learning |
+| TF-IDF Vectorizer | Feature Extraction |
+| Cosine Similarity | Recommendation Engine |
+| HTML | Structure |
+| CSS | Styling |
+| JavaScript | Frontend Interactivity |
+| Lucide Icons | UI Icons |
+
+---
+
+## Project Structure
+
+```text
 kdrama_recommendation/
 │
 ├── app.py
 ├── kdrama.ipynb
 ├── kdrama_list.csv
-├── index.html
-├── styles.css
-├── script.js
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── styles.css
+│   └── script.js
+│
+├── assets/
+│   ├── homepage.png
+│   ├── recommendations.png
+│   └── model-view.png
+│
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation & Setup
+## Installation
 
-## 1️⃣ Clone the Repository
+### Clone Repository
 
-```bash id="4w5m0u"
+```bash
 git clone https://github.com/TushtiSavarn/kdrama_recommendation.git
+
 cd kdrama_recommendation
 ```
 
----
+### Install Dependencies
 
-## 2️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-```bash id="xjj4ha"
+Or:
+
+```bash
 pip install flask pandas scikit-learn
 ```
 
----
+### Run Application
 
-## 3️⃣ Run the Application
-
-```bash id="5qbjlwm"
+```bash
 python app.py
 ```
 
-Open your browser and visit:
+Visit:
 
-```bash id="i4vmpk"
+```text
 http://127.0.0.1:5000/
 ```
 
 ---
 
-# 🧠 How the Recommendation System Works
+## Recommendation Pipeline
 
-## 🔹 Step 1: Data Processing
+### 1. Data Cleaning
 
-The dataset containing K-drama details such as genres, tags, synopses, ratings, and episode information is processed using Pandas.
+- Remove duplicate drama entries
+- Handle missing values
+- Normalize text fields
 
----
+### 2. Feature Engineering
 
-## 🔹 Step 2: TF-IDF Vectorization
+Combine:
 
-Textual information from drama descriptions and tags is converted into numerical vectors using TF-IDF Vectorization.
+- Genre
+- Tags
+- Synopsis
 
----
+into a single feature representation.
 
-## 🔹 Step 3: Similarity Calculation
+### 3. TF-IDF Vectorization
 
-Cosine Similarity is used to calculate similarity scores between dramas.
+Convert textual information into numerical vectors representing drama content.
 
----
+### 4. Similarity Computation
 
-## 🔹 Step 4: Recommendation Generation
+Calculate similarity scores using cosine similarity.
 
-The system returns dramas with the highest similarity scores based on the selected title.
+### 5. Recommendation Generation
 
----
-
-# 📊 Machine Learning Concepts Used
-
-* Content-Based Filtering
-* Natural Language Processing (NLP)
-* TF-IDF Vectorization
-* Cosine Similarity
-* Recommendation Systems
-
-# 📚 Learning Outcomes
-
-This project helped strengthen understanding of:
-
-* Recommendation Systems
-* NLP Fundamentals
-* Machine Learning Workflows
-* Data Preprocessing
-* Flask Web Development
-* Frontend & Backend Integration
-* User Experience Design
+Return the top matching dramas based on similarity scores.
 
 ---
 
-# 🚀 Future Improvements
+## Machine Learning Concepts Used
 
-✔ Hybrid Recommendation System
-✔ User Authentication & Favorites
-✔ Mood-Based Recommendations
-✔ Streaming Platform Integration
-✔ Advanced NLP-Based Recommendations
-✔ Deep Learning Recommendation Models
-✔ Real-Time API Integration
-✔ Dark Mode UI
+- Recommendation Systems
+- Content-Based Filtering
+- Natural Language Processing
+- TF-IDF Vectorization
+- Cosine Similarity
+- Feature Engineering
 
 ---
 
-# 🎯 Why This Project Matters
+## Learning Outcomes
 
-Recommendation systems are widely used in:
+This project helped strengthen my understanding of:
 
-* Netflix
-* Spotify
-* YouTube
-* E-commerce platforms
-
-This project demonstrates practical implementation of machine learning concepts in entertainment-based recommendation systems while combining:
-
-* AI/ML,
-* web development,
-* NLP,
-* and user-centric design.
+- Machine Learning fundamentals
+- Recommendation systems
+- NLP preprocessing techniques
+- Flask application development
+- Frontend and backend integration
+- API development
+- User experience design
 
 ---
 
-# 👩‍💻 Author
+## Limitations
 
-**Tushti Savarn**
-MCA Student | AI/ML & Full-Stack Enthusiast
-
-🔗 GitHub: https://github.com/TushtiSavarn
-🔗 LinkedIn: https://www.linkedin.com/in/tushti-savarn/
-🔗 Medium: https://medium.com/@tushtisavran
+- Recommendations depend on the available dataset.
+- Newly released dramas not present in the dataset cannot be recommended.
+- Content-based filtering does not consider user preferences or viewing history.
 
 ---
 
-# ⭐ Support
+## Future Enhancements
 
-If you enjoyed this project, consider giving it a ⭐ on GitHub!
+- Updated and larger K-Drama dataset
+- Hybrid recommendation system
+- User profiles and favorites
+- Mood-based recommendations
+- Real-time drama data integration
+- Advanced NLP embeddings
+- Personalized recommendation scoring
+
+---
+
+## Author
+
+### Tushti Savarn
+
+MCA Student | AI/ML & Full-Stack Development Enthusiast
+
+GitHub: https://github.com/TushtiSavarn
+
+LinkedIn: https://www.linkedin.com/in/tushti-savarn/
+
+Medium: https://medium.com/@tushtisavran
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for details.

@@ -1,0 +1,490 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Retro Blue Base with a Halftone Dot Grid */
+    background-color: #a3c6f5; 
+    background-image: radial-gradient(#ffffff 15%, transparent 16%),
+                      radial-gradient(#ffffff 15%, transparent 16%);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fdfdfd;
+    border-left: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffb8d8;
+    border: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff5ca8;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+    /* Swapped glassmorphism for a crisp sticker-page background */
+    background: #fcf8f2; 
+    border: 4px solid #000000;
+    border-radius: 16px;
+    padding: 40px;
+    /* Brutalist hard 3D shadow */
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    background: #fff0f7;
+    padding: 30px;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 35px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+}
+
+h1 {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ff5ca8;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    /* 3D Offset Comic Book Text Shadow */
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         5px  5px 0px #000;
+}
+
+.tagline {
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.search-container {
+    display: flex;
+    gap: 16px;
+    align-items: stretch; 
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    flex: 1;
+}
+
+input[type="text"] {
+   width: 100%;
+    padding: 16px;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1); 
+    transition: 0.1s;
+}
+
+input[type="text"]:focus {
+    background: #fffdec;
+    box-shadow: 6px 6px 0px #ff5ca8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    padding: 16px 28px;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* Vibrant solid pink instead of subtle gradient */
+    background: #ff5ca8;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+}
+
+button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* =========================
+   AUTOCOMPLETE
+========================= */
+
+#suggestions {
+   list-style: none;
+    margin-top: 10px; /* Leaves a crisp gap below the input's 3D shadow */
+    background: white;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    max-height: 220px;
+    overflow-y: auto;
+    box-shadow: 5px 5px 0px rgba(0,0,0,1); /* Matches the comic block depth */
+    text-align: left;
+    position: relative;
+    z-index: 20;
+}
+
+#suggestions li {
+    padding: 14px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.1s;
+    border-bottom: 2px solid #000000;
+}
+
+#suggestions li:last-child {
+    border-bottom: none;
+}
+
+#suggestions li:hover {
+    background: #fffdec;
+    color: #ff5ca8;
+}
+
+/* =========================
+   RECOMMENDATION GRID
+========================= */
+
+#recommendations {
+    margin-top: 50px; 
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* =========================
+   DRAMA CARD
+========================= */
+
+.recommendation {
+    background: white;
+    border: 3px solid #000000;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.recommendation:hover {
+    /* Pop out card effect on hover */
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+}
+
+/* =========================
+   POSTER
+========================= */
+
+.poster {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    /* Separates image cleanly from data content below */
+    border-bottom: 3px solid #000000;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content {
+    padding: 20px;
+    background: #ffffff;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   META GRID
+========================= */
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.lucide {
+    width: 18px;
+    height: 18px;
+    color: #ff5ca8;
+    flex-shrink: 0;
+    /* Gives your icons a slight stroke accent boost */
+    filter: drop-shadow(1px 1px 0px #000);
+}
+
+/* =========================
+   GENRE BADGE
+========================= */
+
+.genre {
+    background: #fff176; 
+    color: #000000;
+    border: 3px solid #000000; 
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 3px 3px 0px #000;
+    
+    /* The magic touch: slightly tilts every alternate badge so it feels handmade */
+    transform: rotate(-1.5deg); 
+}
+
+.recommendation:nth-child(even) .genre {
+    transform: rotate(2deg);
+}
+
+/* =========================
+   SYNOPSIS
+========================= */
+
+.synopsis {
+    color: #222222;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message {
+    background: #ffdee9;
+    padding: 20px;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+    box-shadow: 4px 4px 0px #000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(163, 198, 245, 0.75); /* Matching backdrop theme */
+}
+
+.modal-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 40px auto;
+    padding: 30px;
+    border: 4px solid #000000;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 10px 10px 0px #000000;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 32px;
+    font-weight: 900;
+    cursor: pointer;
+    color: #000000;
+}
+
+.close-btn:hover {
+    color: #ff5ca8;
+}
+
+/* =========================
+   EXTRA RETRO SCRAPBOOK DECO
+========================= */
+
+/* The Container page relative layout parent */
+.container {
+    position: relative; 
+}
+
+/* Washi Tape Strips on corners */
+.deco-tape {
+   position: absolute;
+    width: 95px;
+    height: 32px;
+    background: rgba(255, 238, 88, 0.85); 
+    border-left: 3px dashed rgba(0,0,0,0.2); 
+    border-right: 3px dashed rgba(0,0,0,0.2);
+    z-index: 10;
+    filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.15));
+}
+.tape-top-left {
+    top: -10px;
+    left: -20px;
+    transform: rotate(-35deg);
+}
+.tape-top-right {
+    top: -10px;
+    right: -20px;
+    transform: rotate(35deg);
+}
+
+/* Sparkle Elements near title */
+.hero {
+    position: relative;
+}
+.sparkle-badge {
+    position: absolute;
+    font-size: 1.8rem;
+    color: #fff176;
+    text-shadow: 2px 2px 0px #000;
+    top: 15px;
+}
+.badge-left { 
+    left: 20px; transform: rotate(-15deg); 
+}
+.badge-right { 
+    right: 20px; transform: rotate(15deg); 
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        border-width: 3px;
+        box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        text-shadow: 
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #000,
+             1px  1px 0 #000,
+             3px  3px 0px #000;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
+    .poster {
+        height: 350px;
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+    }
+}
