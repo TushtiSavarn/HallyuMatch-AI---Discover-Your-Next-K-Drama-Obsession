@@ -1,10 +1,11 @@
-# 🌟 K-Drama Recommendation System 🎬
+# HallyuMatch AI
+Discover Your Next K-Drama Obsession 🎬
 
 A Machine Learning-based K-Drama Recommendation Web Application built using **Python, Flask, Pandas, and Scikit-learn** that helps users discover K-dramas similar to their favorite shows.
 
 This project uses **content-based filtering**, **TF-IDF vectorization**, and **cosine similarity** to generate personalized drama recommendations based on genres, tags, and plot descriptions.
 
-Designed for K-drama enthusiasts who want to discover new series intelligently through recommendation algorithms and interactive web experience.
+Designed for K-drama enthusiasts who want to discover new series intelligently through recommendation algorithms and interactive web experience.As a K-drama enthusiast, I wanted to explore how recommendation systems used by Netflix and streaming platforms work. This project combines NLP, content-based filtering, and web development to help users discover dramas aligned with their interests.
 
 ---
 
