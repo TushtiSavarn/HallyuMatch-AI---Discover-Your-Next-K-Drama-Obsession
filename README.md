@@ -5,7 +5,7 @@
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-purple?logo=pandas)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Deployment Status](https://shields.io)](https://huggingface.co/spaces/tushtisavarn/HallyuMatch-AI)
+[![Deployment Status](https://shields.io)](https://huggingface.co/spaces/tushtisavarn/HallyuMatch-AI)]
 
 A machine learning-powered K-Drama recommendation web application built with Flask and Scikit-learn. HallyuMatch AI helps users discover similar K-Dramas using Natural Language Processing (NLP) and content-based filtering techniques.
 
