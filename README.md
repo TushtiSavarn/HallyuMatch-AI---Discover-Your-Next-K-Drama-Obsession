@@ -10,7 +10,7 @@
 
 A machine learning-powered K-Drama recommendation web application built with Flask and Scikit-learn. HallyuMatch AI helps users discover similar K-Dramas using Natural Language Processing (NLP) and content-based filtering techniques.
 
-**Live Demo:** https://huggingface.co/spaces/tushtisavran/HallyuMatch-AI
+**Live Demo:** https://huggingface.co/spaces/tushtisavarn/HallyuMatch-AI
 
 ---
 
